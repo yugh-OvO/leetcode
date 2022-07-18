@@ -1,0 +1,27 @@
+/*
+ * @lc app=leetcode.cn id=367 lang=golang
+ *
+ * [367] 有效的完全平方数
+ */
+
+// @lc code=start
+func isPerfectSquare(num int) bool {
+	// 二分查找
+	left := 0
+	right := num
+	for left <= right {
+		mid := (left + right) / 2
+		square := mid * mid
+		if square < num {
+			left = mid + 1
+		} else if square > num {
+			right = mid - 1
+		} else {
+			return true
+		}
+	}
+	return false
+}
+
+// @lc code=end
+
