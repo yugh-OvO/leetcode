@@ -6,19 +6,22 @@
 
 // @lc code=start
 type NumArray struct {
-
+	Nums []int
 }
-
 
 func Constructor(nums []int) NumArray {
-
+	return NumArray{
+		Nums: nums,
+	}
 }
-
 
 func (this *NumArray) SumRange(left int, right int) int {
-
+	num := 0
+	for i := left; i <= right; i++ {
+		num += this.Nums[i]
+	}
+	return num
 }
-
 
 /**
  * Your NumArray object will be instantiated and called as such:
